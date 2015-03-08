@@ -2,6 +2,7 @@ language: c
 compiler: gcc
 before_script:
     - chmod +x ./configure
-    - $ git clone https://github.com/sstephenson/bats.git
-	- $ cd bats
-	- $ sudo ./install.sh /usr/local
+    - git clone https://github.com/sstephenson/bats.git
+	- (cd bats; sudo ./install.sh /usr/local)
+
+script: bats test.bats
